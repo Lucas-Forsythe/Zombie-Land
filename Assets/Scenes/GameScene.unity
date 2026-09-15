@@ -412,6 +412,11 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 5222887693755215035, guid: 0b8be9a04c7441244acb1849be60e43e, type: 3}
   m_PrefabInstance: {fileID: 7818331441889830657}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2141464262 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4004063663711854336, guid: 0b8be9a04c7441244acb1849be60e43e, type: 3}
+  m_PrefabInstance: {fileID: 7818331441889830657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7818331441889830657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -420,6 +425,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2859556053984018295, guid: 0b8be9a04c7441244acb1849be60e43e, type: 3}
+      propertyPath: mouseSensitivity
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859556053984018295, guid: 0b8be9a04c7441244acb1849be60e43e, type: 3}
+      propertyPath: controllerSensitivity
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 5240671290546178236, guid: 0b8be9a04c7441244acb1849be60e43e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -459,6 +472,18 @@ PrefabInstance:
     - target: {fileID: 5240671290546178236, guid: 0b8be9a04c7441244acb1849be60e43e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525603744151300970, guid: 0b8be9a04c7441244acb1849be60e43e, type: 3}
+      propertyPath: sprintMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525603744151300970, guid: 0b8be9a04c7441244acb1849be60e43e, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 2141464262}
+    - target: {fileID: 5525603744151300970, guid: 0b8be9a04c7441244acb1849be60e43e, type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7143528871082013023, guid: 0b8be9a04c7441244acb1849be60e43e, type: 3}
       propertyPath: m_Camera
