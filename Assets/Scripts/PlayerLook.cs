@@ -52,7 +52,6 @@ public class PlayerLook : MonoBehaviour
         {
             sensitivity = controllerSensitivity;
         }
-
         else
         {
             sensitivity = mouseSensitivity;
@@ -69,10 +68,7 @@ public class PlayerLook : MonoBehaviour
 
         transform.Rotate(Vector3.up * mouseX);
 
-        // Important for mouse input
-        if (!usingController)
-        {
-            lookInput = Vector2.zero;
-        }
+        // Clear the input after using it
+        lookInput = Vector2.zero;
     }
 }
