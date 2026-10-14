@@ -3,6 +3,11 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [Header("Attack Settings")]
+    public int attackDamage = 10;
+    public float attackRate = 1.5f;
+    private float nextAttackTime = 0f;
+
     private Transform playerTransform;
     private NavMeshAgent agent;
 
@@ -34,6 +39,23 @@ public class EnemyMovement : MonoBehaviour
         {
             // Gives the navigation gps the player's exact real-time 3D position.
             agent.SetDestination(playerTransform.position);
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        // Checks if the object the enemy object collided with has the PlayerHP script.
+
+        PlayerHP playerHP = collision.gameObject.GetComponent<PlayerHP>();
+
+        // If the object has the PlayerHP script, check the attack cooldown clock.
+        if (playerHP != null && Time.time >= nextAttackTime)
+        {
+            // Deals the damage.
+            playerHP.TakeDamage(attackDamage);
+
+            // Sets the time for when the enemy is allowed to hit again.
+            nextAttackTime = Time.time + attackRate;
         }
     }
 }
