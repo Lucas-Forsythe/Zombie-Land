@@ -87,6 +87,14 @@ public class Revolver : MonoBehaviour
             // What the system will say when we hit a target or an object.
             Debug.Log("You shot" +  hit.collider.name);
 
+            // Trying to find the enemyHP component on the target that is hit.
+            EnemyHP targetHP = hit.collider.GetComponent<EnemyHP>();
+
+            if (targetHP != null)
+            {
+                targetHP.TakeDamage(gunDamage);
+            }
+
             //Tracer ends at the bullet's impact.
             laserTracer.SetPosition(1, hit.point);
 
