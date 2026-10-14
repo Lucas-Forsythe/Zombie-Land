@@ -409,6 +409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5dbb57b394955942841899f64a1436b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  attackDamage: 10
+  attackRate: 1.5
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,6 +572,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1337289783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7637251678924449138, guid: 0b8be9a04c7441244acb1849be60e43e, type: 3}
+  m_PrefabInstance: {fileID: 7818331441889830657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1337289784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337289783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20202fd0c691e9341b8bd580def4e1c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHP
+  maxHP: 100
 --- !u!1 &1775745355
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +726,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7637251678924449138, guid: 0b8be9a04c7441244acb1849be60e43e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1337289784}
   m_SourcePrefab: {fileID: 100100000, guid: 0b8be9a04c7441244acb1849be60e43e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
