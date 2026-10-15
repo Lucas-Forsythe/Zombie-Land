@@ -1205,6 +1205,97 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621181000}
   m_CullTransparentMesh: 1
+--- !u!1 &635225841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 635225842}
+  - component: {fileID: 635225845}
+  - component: {fileID: 635225844}
+  - component: {fileID: 635225843}
+  m_Layer: 5
+  m_Name: Zombies (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &635225842
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635225841}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 815073044}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -664.43, y: -339.5111}
+  m_SizeDelta: {x: 88.4783, y: 117.1778}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &635225843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635225841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f1678aea3a1de448057ebd5552be1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuGIfMaker
+  sprite1: {fileID: -1573619542, guid: e307a184b5e7d11408b5c0e17bf19b94, type: 3}
+  sprite2: {fileID: -715177941, guid: e307a184b5e7d11408b5c0e17bf19b94, type: 3}
+  swapTime: 0.5
+--- !u!114 &635225844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635225841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 6019453725058403666, guid: e307a184b5e7d11408b5c0e17bf19b94, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &635225845
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635225841}
+  m_CullTransparentMesh: 1
 --- !u!1 &713847072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,6 +1678,8 @@ RectTransform:
   - {fileID: 1234368849}
   - {fileID: 789924106}
   - {fileID: 1910209827}
+  - {fileID: 1059659203}
+  - {fileID: 635225842}
   m_Father: {fileID: 22377827}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1606,7 +1699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e95599856cfc66419a05ed3e5db3dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameMenu
-  GameSceneName: GameScene
+  GameSceneName: Environment test
 --- !u!82 &815073046
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2130,6 +2223,97 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043590023}
+  m_CullTransparentMesh: 1
+--- !u!1 &1059659202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1059659203}
+  - component: {fileID: 1059659206}
+  - component: {fileID: 1059659205}
+  - component: {fileID: 1059659204}
+  m_Layer: 5
+  m_Name: Zombies (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1059659203
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059659202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 815073044}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -752.91, y: -339.5111}
+  m_SizeDelta: {x: 88.4783, y: 117.1778}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1059659204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059659202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f1678aea3a1de448057ebd5552be1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuGIfMaker
+  sprite1: {fileID: -1573619542, guid: e307a184b5e7d11408b5c0e17bf19b94, type: 3}
+  sprite2: {fileID: -715177941, guid: e307a184b5e7d11408b5c0e17bf19b94, type: 3}
+  swapTime: 0.5
+--- !u!114 &1059659205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059659202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 6019453725058403666, guid: e307a184b5e7d11408b5c0e17bf19b94, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1059659206
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059659202}
   m_CullTransparentMesh: 1
 --- !u!1 &1075039039
 GameObject:
@@ -3644,8 +3828,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -538.69116, y: 224.04987}
-  m_SizeDelta: {x: 567.259, y: 448.1}
+  m_AnchoredPosition: {x: -841.3904, y: -339.5111}
+  m_SizeDelta: {x: 88.4783, y: 117.1778}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1910209828
 MonoBehaviour:
@@ -3667,7 +3851,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1888839667, guid: 84c00df8de046eb4e92e9256c7b0961b, type: 3}
+  m_Sprite: {fileID: 6019453725058403666, guid: e307a184b5e7d11408b5c0e17bf19b94, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3697,8 +3881,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f1678aea3a1de448057ebd5552be1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuGIfMaker
-  sprite1: {fileID: -1888839667, guid: 84c00df8de046eb4e92e9256c7b0961b, type: 3}
-  sprite2: {fileID: -739913637, guid: 84c00df8de046eb4e92e9256c7b0961b, type: 3}
+  sprite1: {fileID: -1573619542, guid: e307a184b5e7d11408b5c0e17bf19b94, type: 3}
+  sprite2: {fileID: -715177941, guid: e307a184b5e7d11408b5c0e17bf19b94, type: 3}
   swapTime: 0.5
 --- !u!1 &1913212709
 GameObject:
