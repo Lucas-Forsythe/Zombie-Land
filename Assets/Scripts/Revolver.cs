@@ -37,7 +37,10 @@ public class Revolver : MonoBehaviour
     public LineRenderer laserTracer; // The visual bullet trail.
     public float tracerDuration = 0.05f; // How long the bullet's trail stays visible.
 
-   private void Update()
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 50f;
+
+    private void Update()
     {
         // safety check.
         if (playerInput == null) return;
@@ -60,6 +63,14 @@ public class Revolver : MonoBehaviour
 
     void Shoot()
     {
+        GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, barrelTip.rotation);
+
+        Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+
+        if (bulletRb != null)
+        {
+            bulletRb.linearVelocity = barrelTip.forward * bulletSpeed;
+        }
 
         StartCoroutine(RenderTracer());
 
