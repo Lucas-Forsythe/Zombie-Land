@@ -173,9 +173,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5907720802001510382, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1798564992}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
+--- !u!4 &528812902 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6333006657493534060, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
+  m_PrefabInstance: {fileID: 284359969}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &702329622 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5907720802001510382, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
+  m_PrefabInstance: {fileID: 284359969}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1320873069
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,6 +545,59 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &1798564991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1798564992}
+  - component: {fileID: 1798564993}
+  m_Layer: 0
+  m_Name: SledgeHammer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1798564992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798564991}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 702329622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1798564993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798564991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b6d1af6d421194499b6afb81de53b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeavyWeapon
+  attackDamage: 25
+  attackRange: 5
+  attackCooldown: 1.5
+  shockwaveForce: 20
+  attackPoint: {fileID: 528812902}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  isUnlocked: 1
 --- !u!1001 &2112309476309153916
 PrefabInstance:
   m_ObjectHideFlags: 0

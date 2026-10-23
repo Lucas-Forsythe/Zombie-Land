@@ -31,7 +31,8 @@ public class Revolver : MonoBehaviour
     public float fireRate = 0.25F; // Revolver cooldown between shots fired.
     public float gunRange = 50f; // bullet travel distance.
     private float nextFireTime = 0f; // Cooldown tracking.
-
+    [Header("Raycast Settings")]
+    public LayerMask enemyLayer;
     [Header("References and Effects")]
     public Transform barrelTip; // Where the bullet visual starts.
     public LineRenderer laserTracer; // The visual bullet trail.
@@ -81,7 +82,7 @@ public class Revolver : MonoBehaviour
         laserTracer.SetPosition(0, barrelTip.position);
 
         // The raycast calculation
-        if (Physics.Raycast(barrelTip.position, barrelTip.forward, out hit, gunRange))
+        if (Physics.Raycast(barrelTip.position, Camera.main.transform.forward, out hit, gunRange, enemyLayer))
         {
 
             // What the system will say when we hit a target or an object.
