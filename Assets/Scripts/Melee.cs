@@ -5,12 +5,14 @@ public class Melee : MonoBehaviour // <-- MonoBehavior is necessary for the scri
 {
     // Before being fully functional:
     // Need to add script to a child.
-    // Need to assign an enemy to the enemy layer.
     // Need Health script for the enemy.
     // Optional: Maybe we could have a script that allows weapon switch functionality? Or I can change the melee input to another button so that weapon switching won't be necessary.
 
     // Let's this script know the player's input component exists.
     private UnityEngine.InputSystem.PlayerInput playerInput;
+
+    [Header("Weapon Stats")]
+    public int attackDamage = 25;
 
     [Header("Attack Positioning")]
 
@@ -76,6 +78,14 @@ public class Melee : MonoBehaviour // <-- MonoBehavior is necessary for the scri
             // Tells us the enemy that was hit
             Debug.Log("You stabbed" + enemy.name);
 
+            //Looking for attached EnemyHP Script component on the enemy that is hit.
+            EnemyHP targetHP = enemy.GetComponent<EnemyHP>();
+
+            // Inflict knife damage if the script exists on the enemy.
+            if (targetHP != null)
+            {
+                targetHP.TakeDamage(attackDamage);
+            }
         }
 
         // Tells the user the knife was swung.
