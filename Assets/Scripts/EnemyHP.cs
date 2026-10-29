@@ -9,10 +9,14 @@ public class EnemyHP : MonoBehaviour
     public int maxHP = 100;
     private int currentHP;
 
+    private bool isDead = false;
+
     [UnitHeaderInspectable("Visual Feedback")]
     public float flashDuration = 0.1f;
     private Renderer enemyRenderer;
     private Color ogColor;
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,6 +40,8 @@ public class EnemyHP : MonoBehaviour
     //Damage function to be called by other scripts
     public void TakeDamage(int damageAmount)
     {
+        if (isDead) return;
+
         currentHP -= damageAmount;
 
         if (enemyRenderer != null)
@@ -45,9 +51,11 @@ public class EnemyHP : MonoBehaviour
 
         if (currentHP <= 0)
         {
+            isDead = true;
             Die();
         }
     }
+
 
     // Coroutine handles pausing game clock to create the flash effect when the enemy takes damage
     private System.Collections.IEnumerator FlashRed()
@@ -64,7 +72,17 @@ public class EnemyHP : MonoBehaviour
     // A temporary placeholder function for when health hits zero
     private void Die()
     {
-        Debug.Log(gameObject.name + "was slain!!!");
+        Debug.Log(gameObject.name + " was slain!");
+
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.AddKillScore();
+        }
+        else
+        {
+            Debug.LogWarning("No ScoreManager found in the scene!");
+        }
+
         Destroy(gameObject);
     }
 }
