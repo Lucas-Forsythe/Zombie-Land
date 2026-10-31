@@ -81,8 +81,10 @@ public class Revolver : MonoBehaviour
         // Placing the bullet at the starting point, which is the tip of the barrel.
         laserTracer.SetPosition(0, barrelTip.position);
 
+
+
         // The raycast calculation
-        if (Physics.Raycast(barrelTip.position, Camera.main.transform.forward, out hit, gunRange, enemyLayer))
+        if (Physics.Raycast(barrelTip.position, barrelTip.forward, out hit, gunRange, enemyLayer))
         {
 
             // What the system will say when we hit a target or an object.
@@ -109,6 +111,7 @@ public class Revolver : MonoBehaviour
             // Tells tracer to extend to the max distance.
             laserTracer.SetPosition(1, missPoint);
 
+            Debug.Log("Raycast shot forward but missed all targets on the Enemy layer.");
         }
 
     }

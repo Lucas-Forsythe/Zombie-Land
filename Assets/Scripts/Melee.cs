@@ -25,6 +25,9 @@ public class Melee : MonoBehaviour // <-- MonoBehavior is necessary for the scri
     // tells code to only attack enemies
     public LayerMask enemyLayers;
 
+    [Header("Visual References")]
+    public Animator knifeAnimator;
+
     // Bool used to indicate if the player is holding the knife.
     public bool isknifeEquipped = true;
 
@@ -70,6 +73,12 @@ public class Melee : MonoBehaviour // <-- MonoBehavior is necessary for the scri
     
     void TriggerAttack()
     {
+        // Plays swing animation.
+        if (knifeAnimator != null)
+        {
+            knifeAnimator.SetTrigger("Swing");
+        }
+
         // Casts aa invisible sphere that detects enemies on the enemy layerf when contact is made.
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 

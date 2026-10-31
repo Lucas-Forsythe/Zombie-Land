@@ -12,19 +12,15 @@ public class HeavyWeapon : MonoBehaviour
 
     [Header("References")]
     public Transform attackPoint;         
-    public LayerMask enemyLayer;          
+    public LayerMask enemyLayer;
+
+    [Header("Visual Effects")]
+    public GameObject ShockwaveEffect;
 
     [Header("Inventory Status")]
     public bool isUnlocked = false;
 
     private float nextAttackTime = 0f;
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -47,6 +43,11 @@ public class HeavyWeapon : MonoBehaviour
 
     private void ExecuteShockwave()
     {
+        // Spans visual shockwave on the attack point.
+        if (ShockwaveEffect != null)
+        {
+            Instantiate(ShockwaveEffect, attackPoint.position, Quaternion.identity);
+        }
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayer);
 
         foreach (Collider enemy in hitEnemies)
