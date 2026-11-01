@@ -3,6 +3,7 @@ using Unity.Burst.Intrinsics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 using System.Collections;
 
 public class PlayerHP : MonoBehaviour
@@ -19,7 +20,9 @@ public class PlayerHP : MonoBehaviour
     private Vector3 originalCameraPos;
     private bool isShaking = false;
 
-
+    [Header("Death Animation Settings")]
+    public float deathDuration = 1.0f;
+    public float tiltAngle = 60f;
 
 
 
@@ -45,17 +48,42 @@ public class PlayerHP : MonoBehaviour
 
         if (currentHP <= 0)
         {
-            PlayerDie();
+            StartCoroutine(PlayerDie());
         }
     }
 
 
-    private void PlayerDie()
+    private IEnumerator PlayerDie()
     {
         // Tells the Player they died.
         Debug.Log("Player has died! Restarting ther level!");
 
-        // Fetches the scene's build index number and tells Unity to reload the scene
+
+        UnityEngine.InputSystem.PlayerInput input = GetComponent<UnityEngine.InputSystem.PlayerInput>();
+        if (input != null)
+        {
+            ((MonoBehaviour)input).enabled = false;
+        }
+
+        Vector3 startPosition = cameraTransform.localPosition;
+        Quaternion startRotation = cameraTransform.localRotation;
+
+        Vector3 targetPosition = new Vector3(startPosition.x, 0.2f, startPosition.z);
+        Quaternion targetRotation = Quaternion.Euler(startRotation.eulerAngles.x, startRotation.eulerAngles.y, tiltAngle);
+
+        float elapsedTime = 0f;
+        // Changes the camera's values when the player dies.
+        while (elapsedTime < deathDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / deathDuration;
+
+            cameraTransform.localPosition = Vector3.Lerp(startPosition, targetPosition, t);
+            cameraTransform.localRotation = Quaternion.Lerp(startRotation, targetRotation, t);
+
+            yield return null;
+        }
+
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }

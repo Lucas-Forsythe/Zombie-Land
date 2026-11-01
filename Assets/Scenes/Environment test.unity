@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &209648171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9053452438995575309, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
+  m_PrefabInstance: {fileID: 284359969}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &261171349
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,6 +303,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7332313813474223772, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 209648171}
     - target: {fileID: 7694822040644364570, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
       propertyPath: knifeAnimator
       value: 
