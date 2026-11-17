@@ -247,6 +247,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
+  knifeAnimator: {fileID: 6331006205560047459}
   knifeAnimator: {fileID: 2133823313399120482}
   isknifeEquipped: 1
   attackCooldown: 0.5
@@ -1358,10 +1359,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b6d1af6d421194499b6afb81de53b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeavyWeapon
-  attackDamage: 25
+  attackDamage: 50
   attackRange: 5
   attackCooldown: 1.5
-  shockwaveForce: 20
+  shockwaveForce: 10
   attackPoint: {fileID: 6333006657493534060}
   enemyLayer:
     serializedVersion: 2
@@ -1516,6 +1517,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 330134791260072088, guid: 98a5a35cdc32b464cb4e64c515686a04, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 6331006205560047459}
       addedObject: {fileID: 2133823313399120482}
   m_SourcePrefab: {fileID: 100100000, guid: 98a5a35cdc32b464cb4e64c515686a04, type: 3}
 --- !u!1 &2838417005766049919 stripped
@@ -1523,6 +1525,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 330134791260072088, guid: 98a5a35cdc32b464cb4e64c515686a04, type: 3}
   m_PrefabInstance: {fileID: 2589792907545340135}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &6331006205560047459
 --- !u!95 &2133823313399120482
 Animator:
   serializedVersion: 7
