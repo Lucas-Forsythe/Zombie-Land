@@ -41,6 +41,10 @@ public class Revolver : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed = 50f;
 
+    [Header("Gun Audio")]
+    public AudioSource gunAudioSource;
+    public AudioClip gunShotSound;
+
     private void Update()
     {
         // safety check.
@@ -64,6 +68,11 @@ public class Revolver : MonoBehaviour
 
     void Shoot()
     {
+        if (gunAudioSource != null && gunShotSound != null)
+        {
+            gunAudioSource.PlayOneShot(gunShotSound);
+        }
+
         GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, barrelTip.rotation);
 
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
@@ -91,7 +100,7 @@ public class Revolver : MonoBehaviour
             Debug.Log("You shot" +  hit.collider.name);
 
             // Trying to find the enemyHP component on the target that is hit.
-            EnemyHP targetHP = hit.collider.GetComponent<EnemyHP>();
+            EnemyHP targetHP = hit.collider.GetComponentInParent<EnemyHP>();
 
             if (targetHP != null)
             {

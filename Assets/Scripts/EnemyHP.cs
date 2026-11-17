@@ -22,8 +22,8 @@ public class EnemyHP : MonoBehaviour
     void Start()
     {
         currentHP = maxHP;
-        
-        enemyRenderer = GetComponent<Renderer>();
+
+        enemyRenderer = GetComponentInChildren<Renderer>();
 
         if (enemyRenderer != null)
         {
@@ -43,6 +43,7 @@ public class EnemyHP : MonoBehaviour
         if (isDead) return;
 
         currentHP -= damageAmount;
+        Debug.Log($"{name} took {damageAmount} damage. HP: {currentHP}");
 
         if (enemyRenderer != null)
         {

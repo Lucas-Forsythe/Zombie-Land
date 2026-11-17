@@ -98,21 +98,21 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        // Checks if the object the enemy object collided with has the PlayerHP script.
+    //private void OnCollisionStay(Collision collision)
+    //{
+    //    // Checks if the object the enemy object collided with has the PlayerHP script.
 
-        PlayerHP playerHP = collision.gameObject.GetComponent<PlayerHP>();
+    //    PlayerHP playerHP = collision.gameObject.GetComponent<PlayerHP>();
 
-        // If the object has the PlayerHP script, check the attack cooldown clock.
-        if (playerHP != null && Time.time >= nextAttackTime)
-        {
+    //    // If the object has the PlayerHP script, check the attack cooldown clock.
+    //    if (playerHP != null && Time.time >= nextAttackTime)
+    //    {
 
-            // Deals the damage.
-            playerHP.TakeDamage(attackDamage);
+    //        // Deals the damage.
+    //        playerHP.TakeDamage(attackDamage);
 
-            // Sets the time for when the enemy is allowed to hit again.
-            nextAttackTime = Time.time + attackRate;
-        }
-    }
+    //        // Sets the time for when the enemy is allowed to hit again.
+    //        nextAttackTime = Time.time + attackRate;
+    //    }
+    //}
 }

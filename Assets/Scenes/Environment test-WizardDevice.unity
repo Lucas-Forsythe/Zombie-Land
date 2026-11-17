@@ -193,6 +193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4188794778656799810, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
+      propertyPath: gunShotSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1cb1181674ea0f74183b9a5a295a2aed, type: 3}
     - target: {fileID: 5907720802001510382, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -237,6 +241,10 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 19130987}
+    - target: {fileID: 7694822040644364570, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
+      propertyPath: swingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b8d8ff1e64532546aaf114c4d71545f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

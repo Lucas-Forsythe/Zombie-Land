@@ -37,6 +37,10 @@ public class Melee : MonoBehaviour // <-- MonoBehavior is necessary for the scri
     // A variable to keep track of the exact timestamp of when they can swing next.
     private float nextAttackTime = 0f;
 
+    [Header("Attack Audio")]
+    public AudioSource knifeAudioSource;
+    public AudioClip swingSound;
+
     void Start()
     {
 
@@ -79,6 +83,12 @@ public class Melee : MonoBehaviour // <-- MonoBehavior is necessary for the scri
             knifeAnimator.SetTrigger("Swing");
         }
 
+        // Plays the swing sound.
+        if (knifeAudioSource != null && swingSound != null)
+        {
+            knifeAudioSource.PlayOneShot(swingSound);
+        }
+
         // Casts aa invisible sphere that detects enemies on the enemy layerf when contact is made.
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 
@@ -88,7 +98,7 @@ public class Melee : MonoBehaviour // <-- MonoBehavior is necessary for the scri
             Debug.Log("You stabbed" + enemy.name);
 
             //Looking for attached EnemyHP Script component on the enemy that is hit.
-            EnemyHP targetHP = enemy.GetComponent<EnemyHP>();
+            EnemyHP targetHP = enemy.GetComponentInParent<EnemyHP>();
 
             // Inflict knife damage if the script exists on the enemy.
             if (targetHP != null)
