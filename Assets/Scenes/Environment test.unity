@@ -119,16 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!120 &149024275 stripped
-LineRenderer:
-  m_CorrespondingSourceObject: {fileID: 6002800804142375948, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
-  m_PrefabInstance: {fileID: 284359969}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &209648171 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9053452438995575309, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
-  m_PrefabInstance: {fileID: 284359969}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &261171349
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,14 +254,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 727057754260630807, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
+      propertyPath: m_UIInputModule
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 727057754260630807, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Default
+      objectReference: {fileID: 0}
     - target: {fileID: 1007174861734244864, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4188794778656799810, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
-      propertyPath: laserTracer
-      value: 
-      objectReference: {fileID: 149024275}
     - target: {fileID: 5907720802001510382, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -312,21 +306,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7332313813474223772, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
-      propertyPath: cameraTransform
-      value: 
-      objectReference: {fileID: 209648171}
-    - target: {fileID: 7694822040644364570, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
-      propertyPath: knifeAnimator
-      value: 
-      objectReference: {fileID: 1459809436}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2838417005766049919, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1459809436}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
 --- !u!1 &589929783
 GameObject:
@@ -499,17 +482,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 8012440611e0a7e4aa730411ce0c3c9f, type: 3}
+  m_PointAction: {fileID: 0}
+  m_MoveAction: {fileID: 0}
+  m_SubmitAction: {fileID: 0}
+  m_CancelAction: {fileID: 0}
+  m_LeftClickAction: {fileID: 0}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -1071,33 +1054,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1459809435 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2838417005766049919, guid: 1343d54e2f002e34899be7d9a7b1eddb, type: 3}
-  m_PrefabInstance: {fileID: 284359969}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1459809436
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459809435}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dbe386635494b214ea0d9e304383b945, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1492650510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,6 +1328,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09a7747cc5f240c44bf43e4388b61c52, type: 3}
+--- !u!1001 &8548393334226404882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 906175273554863946, guid: ea89d1f8c44b4b1499d76e35ed02a1cf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 906175273554863946, guid: ea89d1f8c44b4b1499d76e35ed02a1cf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 906175273554863946, guid: ea89d1f8c44b4b1499d76e35ed02a1cf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 906175273554863946, guid: ea89d1f8c44b4b1499d76e35ed02a1cf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 906175273554863946, guid: ea89d1f8c44b4b1499d76e35ed02a1cf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906175273554863946, guid: ea89d1f8c44b4b1499d76e35ed02a1cf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906175273554863946, guid: ea89d1f8c44b4b1499d76e35ed02a1cf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906175273554863946, guid: ea89d1f8c44b4b1499d76e35ed02a1cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906175273554863946, guid: ea89d1f8c44b4b1499d76e35ed02a1cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906175273554863946, guid: ea89d1f8c44b4b1499d76e35ed02a1cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903255261832823591, guid: ea89d1f8c44b4b1499d76e35ed02a1cf, type: 3}
+      propertyPath: m_Name
+      value: SledgeHammerPickup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea89d1f8c44b4b1499d76e35ed02a1cf, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1381,7 +1394,7 @@ SceneRoots:
   - {fileID: 2112309476309153916}
   - {fileID: 284359969}
   - {fileID: 1388735090}
-  - {fileID: 261171353}
+  - {fileID: 8548393334226404882}
   - {fileID: 971527235}
   - {fileID: 795196425}
   - {fileID: 949999442}

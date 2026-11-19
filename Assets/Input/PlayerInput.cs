@@ -353,8 +353,30 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""7cac6486-b29d-493b-b0ad-fccf3014602f"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Melee"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""f06bd1ca-3bd7-4d4d-9722-2934f8356e14"",
                     ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""95f4a23e-ad44-497a-9eb8-921294447b0e"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -372,11 +394,49 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bc4b6afb-765d-4cf9-bc75-059304f55bb2"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Keyboard&Controller"",
+            ""bindingGroup"": ""Keyboard&Controller"",
+            ""devices"": []
+        },
+        {
+            ""name"": ""Default"",
+            ""bindingGroup"": ""Default"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // OnFoot
         m_OnFoot = asset.FindActionMap("OnFoot", throwIfNotFound: true);
@@ -625,6 +685,32 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="OnFootActions" /> instance referencing this action map.
     /// </summary>
     public OnFootActions @OnFoot => new OnFootActions(this);
+    private int m_KeyboardControllerSchemeIndex = -1;
+    /// <summary>
+    /// Provides access to the input control scheme.
+    /// </summary>
+    /// <seealso cref="UnityEngine.InputSystem.InputControlScheme" />
+    public InputControlScheme KeyboardControllerScheme
+    {
+        get
+        {
+            if (m_KeyboardControllerSchemeIndex == -1) m_KeyboardControllerSchemeIndex = asset.FindControlSchemeIndex("Keyboard&Controller");
+            return asset.controlSchemes[m_KeyboardControllerSchemeIndex];
+        }
+    }
+    private int m_DefaultSchemeIndex = -1;
+    /// <summary>
+    /// Provides access to the input control scheme.
+    /// </summary>
+    /// <seealso cref="UnityEngine.InputSystem.InputControlScheme" />
+    public InputControlScheme DefaultScheme
+    {
+        get
+        {
+            if (m_DefaultSchemeIndex == -1) m_DefaultSchemeIndex = asset.FindControlSchemeIndex("Default");
+            return asset.controlSchemes[m_DefaultSchemeIndex];
+        }
+    }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "OnFoot" which allows adding and removing callbacks.
     /// </summary>

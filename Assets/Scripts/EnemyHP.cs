@@ -23,7 +23,7 @@ public class EnemyHP : MonoBehaviour
     {
         currentHP = maxHP;
         
-        enemyRenderer = GetComponent<Renderer>();
+        enemyRenderer = GetComponentInChildren<Renderer>();
 
         if (enemyRenderer != null)
         {
@@ -61,7 +61,7 @@ public class EnemyHP : MonoBehaviour
     private System.Collections.IEnumerator FlashRed()
     {
 
-        enemyRenderer.material.color = Color.red;
+        enemyRenderer.material.color = Color.red * 3f;
         
 
         yield return new WaitForSeconds(flashDuration);
