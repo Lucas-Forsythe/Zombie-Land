@@ -2192,7 +2192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e95599856cfc66419a05ed3e5db3dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameMenu
-  GameSceneName: Environment test
+  GameSceneName: Environment test-WizardDevice
 --- !u!82 &815073046
 AudioSource:
   m_ObjectHideFlags: 0
