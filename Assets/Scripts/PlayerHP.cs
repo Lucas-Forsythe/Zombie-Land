@@ -24,7 +24,9 @@ public class PlayerHP : MonoBehaviour
     public float deathDuration = 1.0f;
     public float tiltAngle = 60f;
 
-
+    [Header("Damage Audio")]
+    public AudioSource playerAudioSource;
+    public AudioClip hurtSound;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,6 +40,13 @@ public class PlayerHP : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         currentHP -= damageAmount;
+
+        // Plays when the player takes damage.
+        if (playerAudioSource != null && hurtSound != null)
+        {
+            playerAudioSource.PlayOneShot(hurtSound);
+        }
+
         Debug.Log("Player took damage! Current HP: " + currentHP);
 
         // Activates camera shake.

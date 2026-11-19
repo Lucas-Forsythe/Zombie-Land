@@ -68,12 +68,31 @@ public class Revolver : MonoBehaviour
 
     void Shoot()
     {
+        if (bulletPrefab == null || barrelTip == null)
+        {
+            Debug.LogWarning("Assign Bullet Prefab and Barrel Tip.");
+            return;
+        }
+
+        // Plays the gunshot sound.
         if (gunAudioSource != null && gunShotSound != null)
         {
             gunAudioSource.PlayOneShot(gunShotSound);
         }
 
-        GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, barrelTip.rotation);
+        GameObject bullet = Instantiate(
+            bulletPrefab,
+            barrelTip.position,
+            barrelTip.rotation
+        );
+
+        // Uses the damage value from this gun.
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+
+        if (bulletScript != null)
+        {
+            bulletScript.damage = gunDamage;
+        }
 
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
 
@@ -81,48 +100,11 @@ public class Revolver : MonoBehaviour
         {
             bulletRb.linearVelocity = barrelTip.forward * bulletSpeed;
         }
-
-        StartCoroutine(RenderTracer());
-
-        // Made to hold hit information.
-        RaycastHit hit;
-
-        // Placing the bullet at the starting point, which is the tip of the barrel.
-        laserTracer.SetPosition(0, barrelTip.position);
-
-
-
-        // The raycast calculation
-        if (Physics.Raycast(barrelTip.position, barrelTip.forward, out hit, gunRange, enemyLayer))
-        {
-
-            // What the system will say when we hit a target or an object.
-            Debug.Log("You shot" +  hit.collider.name);
-
-            // Trying to find the enemyHP component on the target that is hit.
-            EnemyHP targetHP = hit.collider.GetComponentInParent<EnemyHP>();
-
-            if (targetHP != null)
-            {
-                targetHP.TakeDamage(gunDamage);
-            }
-
-            //Tracer ends at the bullet's impact.
-            laserTracer.SetPosition(1, hit.point);
-
-        }
         else
         {
-
-            // Calculates a point perfectly straight ahead at max range.
-            Vector3 missPoint = barrelTip.position + (barrelTip.forward * gunRange);
-
-            // Tells tracer to extend to the max distance.
-            laserTracer.SetPosition(1, missPoint);
-
-            Debug.Log("Raycast shot forward but missed all targets on the Enemy layer.");
+            Debug.LogError("The bullet prefab needs a Rigidbody on its main object.");
+            Destroy(bullet);
         }
-
     }
 
     // Handless turning tracer on and off.

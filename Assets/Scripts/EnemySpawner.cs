@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,21 +11,21 @@ public class EnemySpawner : MonoBehaviour
 
     public Transform[] spawnPoints;
 
-    void Start()
+    public float spawnInterval = 2f;
+
+    IEnumerator Start()
     {
         if (enemyPrefab == null || spawnPoints == null ||
-            spawnPoints.Length < enemyCount)
+            spawnPoints.Length == 0)
         {
-            Debug.LogError(
-                "Assign an enemy prefab and at least one spawn point per enemy."
-            );
-            return;
+            Debug.LogError("Assign an enemy prefab and spawn points.");
+            yield break;
         }
 
-        Vector3[] positions = new Vector3[enemyCount];
+        Vector3[] positions = new Vector3[spawnPoints.Length];
 
-        // Check every position before spawning any enemies.
-        for (int i = 0; i < enemyCount; i++)
+        // Check every spawn point before spawning.
+        for (int i = 0; i < spawnPoints.Length; i++)
         {
             if (spawnPoints[i] == null ||
                 !NavMesh.SamplePosition(
@@ -33,21 +34,31 @@ public class EnemySpawner : MonoBehaviour
                     2f,
                     NavMesh.AllAreas))
             {
-                Debug.LogError($"Spawn point {i} is missing or too far from the NavMesh.");
-                return;
+                Debug.LogError(
+                    $"Spawn point {i} is missing or too far from the NavMesh."
+                );
+                yield break;
             }
 
             positions[i] = hit.position;
         }
 
-        // Spawn exactly the requested number.
         for (int i = 0; i < enemyCount; i++)
         {
+            // Cycles through the spawn points in order.
+            int pointIndex = i % spawnPoints.Length;
+
             Instantiate(
                 enemyPrefab,
-                positions[i],
-                spawnPoints[i].rotation
+                positions[pointIndex],
+                spawnPoints[pointIndex].rotation
             );
+
+            // Wait before spawning the next enemy.
+            if (i < enemyCount - 1)
+            {
+                yield return new WaitForSeconds(spawnInterval);
+            }
         }
     }
 }
